@@ -41,6 +41,10 @@ Use relevant checks for the change. The complete local gate, `npm run check:pr`,
 
 `docs/public/product-catalog.json`, `docs/verification/managed-conformance-*.json`, and `skills/` are ignored outputs. Edit source contracts and `.agents/skills/reverse-engineer-anything/`, then regenerate as needed. `.cache/mcp-tool-catalog.json` is test metadata; runtime builds and source checking do not consume it. Never commit binaries, provider project documents, credentials, `dist/`, `node_modules/`, or local planning artifacts.
 
+## Cursor Cloud specific instructions
+
+Login shells prepend `/usr/local/bin`, so `node` and `npm` resolve to the pinned toolchain above. CLI analysis, `npm run check:fast`, and source tests do not need a long-running service. Hopper, Ghidra, and IDA remain caller-supplied.
+
 ## Tool and Test Changes
 
 For tool design, follow [docs/tool-design.md](docs/tool-design.md): start from the analyst question, reuse existing contracts, preserve caller choices, and return useful evidence inline. Limits must follow real format, protocol, authority, or resource constraints. Account for representation expansion before allocation; derive completeness from examined coverage.
